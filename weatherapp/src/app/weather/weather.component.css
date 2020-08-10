@@ -1,0 +1,43 @@
+.container {
+    text-align: center;
+    background-image: url(../../images/background.jpg);
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+
+.refresh {
+  background-image: url(../../images/refresh.png);
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.previous {
+ background-image: url(../../images/leftArrow.png);
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.next {
+    background-image: url(../../images/rightArrow.png);
+     height: 50px;
+     width: 50px;
+     background-color: transparent;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     position: relative;
+   }

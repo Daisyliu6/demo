@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>{{ city }}</h1>
+  <p>{{ temperature }}</p>
+  <button class="refresh" (click)="getWeather()"></button>
+  
+  <button class="previous" (click)="getCity(cities[1])"></button>
+  <button class="next" (click)="getCity(cities[2])"></button>
+</div>
