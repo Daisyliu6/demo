@@ -3,10 +3,10 @@
 
   <div class="main">
     <div class="left">
-      <button class="previous" (click)="getCity(cities[1])"></button>
+      <button class="previous" (click)="getCity(city)"></button>
     </div>
     <div class="right">
-      <button class="next" (click)="getCity(cities[2])"></button>
+      <button class="next" (click)="getCity(city)"></button>
     </div>
     <div class="center">
       <img *ngIf="temperature != null" src="{{ iconUrl }}" />
