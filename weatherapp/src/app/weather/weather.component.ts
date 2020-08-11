@@ -8,9 +8,38 @@ import { GetWeatherService } from "../get-weather.service";
 })
 export class WeatherComponent implements OnInit {
   cities = ["Sydney", "Melbourne", "Brisbane"];
-  temperature = 0;
+  temperature = null;
+  description = null;
+  temp_min = null;
+  temp_max = null;
+  iconUrl = null;
   city = "Sydney";
-  saved_data = [{city: "Sydney", temperature: 0}, {city: "Melbourne", temperature: 0}, {city: "Brisbane", temperature: 0}];
+  saved_data = [
+    {
+      city: "Sydney",
+      temperature: null,
+      description: null,
+      temp_min: null,
+      temp_max: null,
+      iconUrl: null
+    },
+    {
+      city: "Melbourne",
+      temperature: null,
+      description: null,
+      temp_min: null,
+      temp_max: null,
+      iconUrl: null
+    },
+    {
+      city: "Brisbane",
+      temperature: null,
+      description: null,
+      temp_min: null,
+      temp_max: null,
+      iconUrl: null
+    },
+  ];
 
   constructor(private getWeatherservice: GetWeatherService) {}
 
@@ -18,25 +47,40 @@ export class WeatherComponent implements OnInit {
 
   getCity(city) {
     this.city = city;
+    // make a loop
     const pre_city = this.cities.splice(0, 1)[0];
     this.cities.splice(2, 0, pre_city);
     const current_city = this.cities[0];
-    this.saved_data.forEach(item => {
+    // save the data
+    this.saved_data.forEach((item) => {
       if (item.city == current_city) {
-         this.temperature = item.temperature;
-        } 
+        this.temperature = item.temperature;
+        this.description = item.description;
+        this.temp_min = item.temp_min;
+        this.temp_max = item.temp_max;
+        this.iconUrl = item.iconUrl;
+      }
     });
   }
 
   getWeather() {
-    this.getWeatherservice.getWeather(this.city).subscribe((result) => {
-      this.temperature = result;
+    this.getWeatherservice.getWeather(this.city).subscribe((neededData) => {
+      this.temperature = neededData.temp;
+      this.description = neededData.descrip;
+      this.temp_min = neededData.temp_min;
+      this.temp_max = neededData.temp_max;
+      this.iconUrl = neededData.iconUrl;
       const current_city = this.cities[0];
-      this.saved_data.forEach(item => {
+      // get the weather info from API
+      this.saved_data.forEach((item) => {
         if (item.city == current_city) {
-          item.temperature = result;
-        } 
+          item.temperature = neededData.temp;
+          item.description = neededData.descrip;
+          item.temp_min = neededData.temp_min;
+          item.temp_max = neededData.temp_max;
+          item.iconUrl = neededData.iconUrl;
+        }
+      });
     });
-  })
-}
+  }
 }

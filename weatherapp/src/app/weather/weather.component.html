@@ -1,8 +1,31 @@
 <div class="container">
   <h1>{{ city }}</h1>
-  <p>{{ temperature }}</p>
-  <button class="refresh" (click)="getWeather()"></button>
-  
-  <button class="previous" (click)="getCity(cities[1])"></button>
-  <button class="next" (click)="getCity(cities[2])"></button>
+
+  <div class="main">
+    <div class="left">
+      <button class="previous" (click)="getCity(cities[1])"></button>
+    </div>
+    <div class="right">
+      <button class="next" (click)="getCity(cities[2])"></button>
+    </div>
+    <div class="center">
+      <img *ngIf="temperature != null" src="{{ iconUrl }}" />
+      <p>
+        <button
+          *ngIf="temperature == null"
+          class="refresh"
+          (click)="getWeather()"
+        ></button>
+        {{ temperature }}
+      </p>
+    </div>
+  </div>
+
+  <div *ngIf="temperature != null">
+    <div class="footer">
+      <p class="left">{{ temp_min }}</p>
+      <p class="right">{{ temp_max }}</p>
+    </div>
+    <p>{{ description }}</p>
+  </div>
 </div>

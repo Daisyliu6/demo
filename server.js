@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', express.static(__dirname+'/weatherapp/dist/weatherapp'));
 			
 app.get("/:city", async function(req, res){
-res.json(await func.weather(req.params));
+res.json(await func.weather(req.params)); // the city name
 });
 
 app.listen(8080, () => console.log('Server is running!'));

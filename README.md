@@ -14,6 +14,6 @@ Go to http://localhost:8080/
 
 ## step 5 
 click the left and right arrows to see all the available cities 
-click the fresh button to see the temperature of that city 
+click the fresh button to see the temperature infomation of that city 
 
 
