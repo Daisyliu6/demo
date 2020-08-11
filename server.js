@@ -14,7 +14,7 @@ app.get("/:city", async function(req, res){
 res.json(await func.weather(req.params)); // the city name
 });
 
-app.listen(8080, () => console.log('Server is running!'));
+app.listen(process.env.PORT || 8080, () => console.log('Server is running!'));
 
 app.use(function (req, res, next) {
 	res.status(404).send('404')
