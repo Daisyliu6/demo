@@ -45,7 +45,7 @@ export class WeatherComponent implements OnInit {
 
   ngOnInit() {}
 
-  // initial city is Sydney; call getCity when click the button
+  // call getCity when click the button
   getCity() {
     const pre_city = this.cities.splice(0, 1)[0];
     // add the pre_city to the array

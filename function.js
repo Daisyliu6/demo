@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 module.exports.weather = async function (query) {
-  const url = process.env.REST_ENDPOINT + query.city + "&units=metric&appid=" + process.env.KEY;
+  const url = process.env.REST_ENDPOINT + query.city + ",au&units=metric&appid=" + process.env.KEY;
   result = await axios.get(url);
   const description = result.data.weather[0].description;
   const icon = result.data.weather[0].icon;
