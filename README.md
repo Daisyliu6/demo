@@ -4,7 +4,7 @@
 npm install
 
 ## step 2
-Go to weatherapp folder and Run `ng build` to build the project. 
+Go to weatherapp folder and npm install then Run `ng build` to build the project. 
 
 ## step 3
 Go to the demo folder and run node server.js
