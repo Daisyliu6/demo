@@ -11,8 +11,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', express.static(__dirname+'/weatherapp/dist/weatherapp'));
 
 // Create link to Angular build directory
-var distDir = __dirname + "/weatherapp/dist/weatherapp/index.html";
-app.use(express.static(distDir));
+// var distDir = __dirname + "/weatherapp/dist/weatherapp/index.html";
+// app.use(express.static(distDir));
 			
 app.get("/:city", async function(req, res){
 res.json(await func.weather(req.params)); // the city name
