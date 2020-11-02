@@ -29,5 +29,8 @@ app.use(function (err, req, res, next) {
 	res.status(500).send('500');
 });
 
+// Create link to Angular build directory
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
 // const distDir = __dirname + "/dist/";
 // app.use(express.static(distDir));
