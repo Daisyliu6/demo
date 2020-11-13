@@ -8,10 +8,10 @@ const func = require("./function");
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // Create link to Angular build directory
-var distDir = __dirname + "/weatherapp/dist/weatherapp";
-app.use(express.static(distDir));
+app.use(express.static(__dirname + "/public"));
 			
 app.get("/:city", async function(req, res){
 res.json(await func.weather(req.params)); // the city name
@@ -31,7 +31,3 @@ app.use(function (err, req, res, next) {
 	console.error(err.stack);
 	res.status(500).send('500');
 });
-
-
-// const distDir = __dirname + "/dist/";
-// app.use(express.static(distDir));
