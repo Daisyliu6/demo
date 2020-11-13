@@ -1,6 +1,6 @@
 # Weatherapp
 ### you can see it live here  👇
-####  https://weather-mean.herokuapp.com/weather
+####  https://weather-mean.herokuapp.com
 
 ## step 1
 Git clone then npm install (You do need create one env file to store your own weather API and key)
