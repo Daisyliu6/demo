@@ -8,7 +8,6 @@ const func = require("./function");
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use('/', express.static(__dirname+'/weatherapp/dist/weatherapp'));
 
 // Create link to Angular build directory
 var distDir = __dirname + "/weatherapp/dist/weatherapp";

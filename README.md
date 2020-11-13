@@ -1,8 +1,9 @@
 # Weatherapp
 ### you can see it live here  👇
 #### 
+
 ## step 1
-npm install
+Git clone then npm install (You do need create one env file to store your own weather API and key)
 
 ## step 2
 Go to weatherapp folder and npm install then Run `ng build` to build the project. 
