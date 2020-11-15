@@ -16,15 +16,15 @@
           class="refresh"
           (click)="getWeather()"
         ></button>
-        {{ temperature }}
+        <span *ngIf="temperature != null">{{ temperature }}&#8451;</span>
       </p>
     </div>
   </div>
 
   <div *ngIf="temperature != null">
     <div class="footer">
-      <p class="left">{{ temp_min }}</p>
-      <p class="right">{{ temp_max }}</p>
+      <p class="left">{{ temp_min }}&#8451;</p>
+      <p class="right">{{ temp_max }}&#8451;</p>
     </div>
     <p>{{ description }}</p>
   </div>
