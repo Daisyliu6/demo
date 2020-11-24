@@ -3,7 +3,7 @@
 ####  https://weather-mean.herokuapp.com
 
 ## step 1
-Git clone then npm install (You do need create one env file to store your own weather API and key)
+Git clone then npm install ( :lollipop: You do need to install dotenv & create one env file to store your own weather API and key)
 
 ## step 2
 Go to weatherapp folder and npm install then Run `ng build` to build the project. 
